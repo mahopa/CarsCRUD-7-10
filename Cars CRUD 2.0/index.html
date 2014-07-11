@@ -6,12 +6,34 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body class="well">
-    <input type="text" id="carEntry" placeholder="Enter car name:"/><input type="text" id="yearEntry" placeholder="Enter car year:"/>&nbsp;<button onclick="CarApp.addCar()" class="btn btn-success fa fa-cab">Add Car</button>
-
+    <input type="text" id="carEntry" placeholder="Enter car name:"/><input type="text" id="yearEntry" placeholder="Enter car year:"/>&nbsp;<button onclick="CarApp.addCar();
+    document.getElementById('icon').classList.add('fa-spin');" class="btn btn-success fa fa-cab">Add Car</button>
+    <i id="icon" class="fa fa-space-shuttle fa-4x"></i>
     <div id="carTable">
-
+        
     </div>
 
+
+    <!--Modal Starts Here-->
+    <div class="modal fade" id="updateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                   <input type="text" id="editCarEntry" />
+                    <input type="text" id="editCarYear" />
+                    <input type="hidden" id="editCarId" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"  onclick="CarApp.Update.save()">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="JavaScript.js"></script>
